@@ -1,0 +1,21 @@
+.lnd-content {
+  padding: 190px 0 0;
+  &-titles {
+    padding: 0 0 39px;
+    font-family: "Proxima Nova";
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+    h1 {
+      font-weight: bold;
+      font-size: 37px;
+      color: rgb(131, 166, 228);
+    }
+    h2 {
+      font-weight: lighter;
+      font-size: 34px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+  }
+}

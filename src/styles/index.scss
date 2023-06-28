@@ -3,5 +3,10 @@
   src: url('../fonts/Inter.ttf');
 }
 
+@import "reset.css";
+
 @import 'variables';
 @import 'scaffolding';
+
+@import "sections/header";
+@import "sections/main";
