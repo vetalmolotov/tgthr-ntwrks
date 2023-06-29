@@ -9,49 +9,50 @@
   </head>
 
   <body>
-<!--    <div id="root"></div>-->
-    <header class="lnd-header">
-      <div class="lnd-logo"></div>
-      <div class="lnd-login" id="loginForm">
-        <div class="lnd-login-action" id="showLogin">
-          Log in
-        </div>
-        <div class="lnd-login-form">
-          <div class="lnd-login-input">
-            <input type="email" placeholder="Email">
-            <p>Please enter a valid email address</p>
+    <div class="lnd">
+      <header class="lnd-header">
+        <div class="lnd-logo"></div>
+        <div class="lnd-login" id="loginForm">
+          <div class="lnd-login-action" id="showLogin">
+            Log in
           </div>
-          <div class="lnd-login-input">
-            <input type="password" placeholder="Password">
-            <a href="#">Forgot your password?</a>
+          <div class="lnd-login-form">
+            <div class="lnd-login-input">
+              <input type="email" placeholder="Email">
+              <p>Please enter a valid email address</p>
+            </div>
+            <div class="lnd-login-input">
+              <input type="password" placeholder="Password">
+              <a href="#">Forgot your password?</a>
+            </div>
+            <input type="button" class="lnd-login-button" value="Log in">
           </div>
-          <input type="button" class="lnd-login-button" value="Log in">
         </div>
-      </div>
-    </header>
-    <main class="lnd-content">
-      <header class="lnd-content-titles">
-        <h1>StarCompany DESIGNS, MANUFACTURES AND</h1>
-        <h2>Launches Advanced Rockets and  Spacecrafts</h2>
       </header>
-      <section class="lnd-content-registration">
-        <form id="registration" id="registration">
-          <div id="slider" class="reg-slider slide1">
-            <div class="reg-slider-prev" id="prev">
-              <span>prev</span>
+      <main class="lnd-content">
+        <header class="lnd-content-titles">
+          <h1>StarCompany DESIGNS, MANUFACTURES AND</h1>
+          <h2>Launches Advanced Rockets and  Spacecrafts</h2>
+        </header>
+        <section class="lnd-content-registration">
+          <form id="registration" id="registration">
+            <div id="slider" class="reg-slider" data-step="slide1">
+              <div class="reg-slider-prev" id="prev">
+                <span>prev</span>
+              </div>
+              <div class="reg-slider-next" id="next">next</div>
+              <div class="reg-slider-list">
+                <div id="slide1" class="reg-slider-item show">1</div>
+                <div id="slide2" class="reg-slider-item">2</div>
+                <div id="slide3" class="reg-slider-item">3</div>
+                <div id="slide4" class="reg-slider-item">4</div>
+                <div id="slide5" class="reg-slider-item">5</div>
+              </div>
             </div>
-            <div class="reg-slider-next" id="next">next</div>
-            <div class="reg-slider-list">
-              <div id="slide1" class="reg-slider-item show">1</div>
-              <div id="slide2" class="reg-slider-item">2</div>
-              <div id="slide3" class="reg-slider-item">3</div>
-              <div id="slide4" class="reg-slider-item">4</div>
-              <div id="slide5" class="reg-slider-item">5</div>
-            </div>
-          </div>
-        </form>
+          </form>
 
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

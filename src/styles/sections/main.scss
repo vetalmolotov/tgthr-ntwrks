@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 190px 0 0;
+  width: 100%;
+  max-width: 960px;
+  padding: 190px 0 32px;
   &-titles {
     padding: 0 0 39px;
     font-family: "Proxima Nova";
@@ -29,6 +31,57 @@
   display: flex;
   position: relative;
   width: 360px;
+  &[data-step="slide1"] {
+    #slide1 {
+      left: 0;
+    }
+  }
+  &[data-step="slide2"] {
+    #slide1 {
+      left: -100%;
+    }
+    #slide2 {
+      left: 0;
+    }
+  }
+  &[data-step="slide3"] {
+    #slide1,
+    #slide2 {
+      left: -100%;
+    }
+    #slide3 {
+      left: 0;
+    }
+  }
+  &[data-step="slide4"] {
+    #slide1,
+    #slide2,
+    #slide3 {
+      left: -100%;
+    }
+    #slide4 {
+      left: 0;
+    }
+  }
+  &[data-step="slide5"] {
+    #slide1,
+    #slide2,
+    #slide3,
+    #slide4 {
+      left: -100%;
+    }
+    #slide5 {
+      left: 0;
+    }
+  }
+  &[data-step="slide6"] {
+    .reg-slider-item {
+      left: -100%;
+    }
+    #next {
+      pointer-events: none;
+    }
+  }
   &-prev,
   &-next {
     position: absolute;
@@ -61,13 +114,5 @@
     left: 100%;
     transition: left 500ms;
     z-index: 2;
-    &.show {
-      left: 0;
-      z-index: 3;
-    }
-    &.hide {
-      left: -100%;
-      z-index: 1;
-    }
   }
 }
