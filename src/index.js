@@ -14,13 +14,52 @@ showLoginButton.addEventListener('click', () => {
   loginForm.classList.add('open');
 })
 
+
 const slider = document.querySelector('#slider')
 const nextButton = document.querySelector('#next')
+let form = document.querySelector('#registration')
+let inputText = document.querySelector('#address')
+let inputEmail = document.querySelector('#email')
+let inputPass = document.querySelector('#password')
 let count = 1
+
+const validation = (elem) => {
+  let result = true
+
+  if (elem.value == '') {
+    console.log('error')
+    form.setAttribute('data-error', 'error')
+    result = false
+  } else {
+    form.setAttribute('data-error', '')
+  }
+}
 nextButton.addEventListener('click', (e) => {
-  count = count + 1;
+
   // nextButton.innerHTML=count
-  slider.setAttribute('data-step', 'slide' + count)
+  if (slider.getAttribute('data-step') === 'slide1') {
+    console.log('test' + count)
+  }
+  if (slider.getAttribute('data-step') === 'slide2') {
+    console.log('test' + count)
+  }
+  if (slider.getAttribute('data-step') === 'slide3') {
+    console.log('test' + count)
+    validation(inputText)
+  }
+  if (slider.getAttribute('data-step') === 'slide4') {
+    console.log('test' + count)
+    validation(inputEmail)
+  }
+  if (slider.getAttribute('data-step') === 'slide5') {
+    console.log('test bar' + count)
+    validation(inputPass)
+    form.submit()
+  }
+  if (form.getAttribute('data-error') === '') {
+    count = count + 1;
+    slider.setAttribute('data-step', 'slide' + count)
+  }
 
 })
 

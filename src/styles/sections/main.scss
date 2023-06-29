@@ -77,9 +77,13 @@
   &[data-step="slide6"] {
     .reg-slider-item {
       left: -100%;
+      &:last-child {
+        left: 0;
+      }
     }
     #next {
       pointer-events: none;
+      opacity: 0.5;
     }
   }
   &-prev,
@@ -89,16 +93,62 @@
     transform: translateY(-50%);
   }
   &-prev {
-    left: -50px;
+    left: -70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #fff;
+    border-radius: 4px;
+    opacity: 0.502;
+    width: 40px;
+    height: 40px;
+    &:hover {
+      opacity: 1;
+    }
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      display: block;
+      border-left: solid 2px #fff;
+      border-bottom: solid 2px #fff;
+      transform: rotate(45deg);
+    }
   }
   &-next {
-    right: -50px;
+    right: -150px;
+    width: 120px;
+    height: 40px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 1;
+    background: $gradient-button;
+    border-radius: 4px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 1px 17px 1px #2BA0EA;
+    }
+    &::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      display: block;
+      border-right: solid 2px #fff;
+      border-bottom: solid 2px #fff;
+      transform: rotate(-45deg);
+    }
   }
   &-list {
     position: relative;
     width: 100%;
     height: 90px;
     display: flex;
+    padding: 4px;
     border-radius: 4px;
     background-color: rgba(225, 230, 235, 0.502);
     overflow: hidden;
@@ -106,13 +156,43 @@
   &-item {
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     height: 100%;
+    padding: 4px;
     flex-shrink: 0;
     position: absolute;
+    top: 0;
     left: 100%;
     transition: left 500ms;
     z-index: 2;
+  }
+}
+.form {
+  &-label {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+  }
+  &-notify {
+    position: absolute;
+    top: 100px;
+    display: none;
+  }
+  &-input {
+    width: 100%;
+    height: 55px;
+    border-radius: 4px;
+    background: #fff;
+    padding: 4px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(110, 116, 124);
+    line-height: 1.2;
+    text-align: center;
+    input {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
