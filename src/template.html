@@ -39,58 +39,70 @@
           <h2>Launches Advanced Rockets and  Spacecrafts</h2>
         </header>
         <section class="lnd-content-registration">
-          <form id="registration" class="form" data-error="" action="http://www.mocky.io/v2/5dfcef48310000ee0ed2c281">
+          <form id="registration" class="form" data-error="">
             <div id="slider" class="reg-slider" data-step="slide1">
               <div class="reg-slider-prev" id="prev"></div>
               <div class="reg-slider-next" id="next">Next Step</div>
               <div class="reg-slider-list">
                 <div id="slide1" class="reg-slider-item">
-                  <label class="form-label">Who are you?</label>
-                  <div class="form-input">
-                    <select>
-                      <option>Engineer</option>
-                      <option>Business Development Executive</option>
-                      <option>Office Manager/PA</option>
-                      <option>Accountant</option>
-                      <option>VR Designer</option>
-                    </select>
+                  <div class="form-item">
+                    <label class="form-label">Who are you?</label>
+                    <div class="form-input">
+                      <select>
+                        <option>Engineer</option>
+                        <option>Business Development Executive</option>
+                        <option>Office Manager/PA</option>
+                        <option>Accountant</option>
+                        <option>VR Designer</option>
+                      </select>
+                    </div>
                   </div>
-                  <p class="form-error">fsffs</p>
+
                 </div>
                 <div id="slide2" class="reg-slider-item">
-                  <label class="form-label">What is your age?</label>
-                  <div class="form-input">
-                    <select>
-                      <option>18</option>
-                      <option>19</option>
-                      <option>20</option>
-                      <option>21</option>
-                      <option>22</option>
-                    </select>
+                  <div class="form-item">
+                    <label class="form-label">What is your age?</label>
+                    <div class="form-input">
+                      <select>
+                        <option></option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                        <option>22</option>
+                      </select>
+                    </div>
                   </div>
-                  <p class="form-error">fsffs</p>
+                  <p class="form-error">Please select your age</p>
                 </div>
                 <div id="slide3" class="reg-slider-item">
-                  <label class="form-label">I am from</label>
-                  <div class="form-input">
-                    <input type="text" id="address">
+                  <div class="form-item">
+                    <label class="form-label">I am from</label>
+                    <div class="form-input">
+                      <input name="address" type="text" id="address">
+                    </div>
                   </div>
                   <div class="form-notify">
                     <p class="form-error">Enter your postal code to find local matches</p>
-                    <p class="form-text">ffsfs</p>
+                    <p class="form-text">E.g.: New Roads or 70760<br>
+                      We don’t use postal addresses to contact members directly!</p>
                   </div>
                 </div>
                 <div id="slide4" class="reg-slider-item">
-                  <label class="form-label">Your email adress</label>
-                  <div class="form-input">
-                    <input type="email" id="email">
+                  <div class="form-item">
+                    <label class="form-label">Your email adress</label>
+                    <div class="form-input">
+                      <input name="email" type="email" id="email" placeholder="example: aaa@mail.com">
+                    </div>
                   </div>
                   <p class="form-error">Please enter a valid email address</p>
                 </div>
                 <div id="slide5" class="reg-slider-item">
-                  <label class="form-label">Create your password</label>
-                  <div class="form-input">
-                    <input type="password" id="password">
+                  <div class="form-item">
+                    <label class="form-label">Create your password</label>
+                    <div class="form-input">
+                      <input name="password" type="password" id="password" placeholder="regexp is min 5 symbols">
+                    </div>
                   </div>
                   <div class="form-notify">
                     <p class="form-error">Please enter a password to secure your account</p>
@@ -100,6 +112,14 @@
                   </div>
                 </div>
               </div>
+              <ul class="reg-slider-dots">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+
             </div>
           </form>
 

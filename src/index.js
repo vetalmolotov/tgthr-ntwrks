@@ -1,12 +1,7 @@
 // Test import of a JavaScript module
 // import { example } from '@/js/example'
-//
-// // Test import of an asset
-// import webpackLogo from '@/images/webpack-logo.svg'
 
 import '@/styles/index.scss'
-
-
 
 const showLoginButton = document.querySelector('#showLogin')
 const loginForm = document.querySelector('#loginForm')
@@ -24,7 +19,16 @@ let inputPass = document.querySelector('#password')
 let count = 1
 
 const validation = (elem) => {
+  const logJSONData = async () => {
+    const response = await fetch("http://www.mocky.io/v2/5dfcef48310000ee0ed2c281");
+    const errorsData = await response.json();
+    console.log(errorsData.errors[0].message);
+  }
+  logJSONData()
+
   let result = true
+  let regexForEmail = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+
 
   if (elem.value == '') {
     console.log('error')
@@ -33,10 +37,36 @@ const validation = (elem) => {
   } else {
     form.setAttribute('data-error', '')
   }
-}
-nextButton.addEventListener('click', (e) => {
+  if (elem.getAttribute('name') === 'email') {
+    if (!regexForEmail.test(elem.value)) {
+      console.log('email')
+      form.setAttribute('data-error', 'error')
+      result = false
+    }  else {
+      form.setAttribute('data-error', '')
+    }
+  }
+  if (elem.getAttribute('name') === 'password') {
+    if (elem.value.length < 5) {
+      console.log(elem.value.length)
+      console.log('password')
+      form.setAttribute('data-error', 'error')
+      result = false
+    }  else {
+      form.setAttribute('data-error', '')
+    }
+  }
+  // if ( elem.value == '' || elem.getAttribute('name') === 'email' && !regexForEmail.test(elem.value)) {
+  //   console.log('email')
+  //   form.setAttribute('data-error', 'error')
+  //   result = false
+  // }  else {
+  //   form.setAttribute('data-error', '')
+  // }
 
-  // nextButton.innerHTML=count
+}
+nextButton.addEventListener('click', () => {
+
   if (slider.getAttribute('data-step') === 'slide1') {
     console.log('test' + count)
   }
@@ -54,7 +84,7 @@ nextButton.addEventListener('click', (e) => {
   if (slider.getAttribute('data-step') === 'slide5') {
     console.log('test bar' + count)
     validation(inputPass)
-    form.submit()
+    // form.submit()
   }
   if (form.getAttribute('data-error') === '') {
     count = count + 1;
