@@ -116,6 +116,20 @@
       left: -100%;
       &:last-child {
         left: 0;
+        .form-notify,
+        .form-label,
+        .form-input {
+          display: none;
+        }
+        .form-item {
+          justify-content: center;
+          &::before {
+            // придумал вывести текст вконце в последний момент,
+            // не было времени добавлять новый блок(
+            content: 'Thank You!';
+            opacity: 1;
+          }
+        }
       }
     }
     .reg-slider-dots {
@@ -232,7 +246,8 @@
     flex-direction: column;
     align-items: center;
   }
-  &-input {
+  &-input,
+  option {
     width: 100%;
     height: 55px;
     border-radius: 4px;
@@ -250,6 +265,12 @@
         font-size: 16px;
       }
     }
+    select {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
   }
   &-item {
     width: 100%;
@@ -262,6 +283,14 @@
     border-radius: 4px;
     margin-bottom: 4px;
     background-color: rgba(225, 230, 235, 0.502);
+    &::before {
+      content: '';
+      font-family: "Open Sans", sans-serif;
+      color: #fff;
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 700ms;
+    }
   }
   &-error {
     display: none;

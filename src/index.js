@@ -17,30 +17,46 @@ let inputText = document.querySelector('#address')
 let inputEmail = document.querySelector('#email')
 let inputPass = document.querySelector('#password')
 let count = 1
+let addressErrorText = document.querySelector('#slide3 .form-error')
+let emailErrorText = document.querySelector('#slide4 .form-error')
+let passwordErrorText = document.querySelector('#slide5 .form-error')
 
 const validation = (elem) => {
-  const logJSONData = async () => {
+  const logJSONData = async (e, num) => {
     const response = await fetch("http://www.mocky.io/v2/5dfcef48310000ee0ed2c281");
     const errorsData = await response.json();
-    console.log(errorsData.errors[0].message);
+    console.log(errorsData.errors[num].message);
+    e.innerHTML = errorsData.errors[num].message
   }
-  logJSONData()
+  // logJSONData()
 
   let result = true
   let regexForEmail = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
 
 
-  if (elem.value == '') {
+  if (elem.value === '') {
     console.log('error')
     form.setAttribute('data-error', 'error')
     result = false
   } else {
     form.setAttribute('data-error', '')
   }
+
+  if (elem.getAttribute('name') === 'address') {
+    if (elem.value === '') {
+      console.log('address')
+      form.setAttribute('data-error', 'error')
+      logJSONData(addressErrorText, 3)
+      result = false
+    }  else {
+      form.setAttribute('data-error', '')
+    }
+  }
   if (elem.getAttribute('name') === 'email') {
     if (!regexForEmail.test(elem.value)) {
       console.log('email')
       form.setAttribute('data-error', 'error')
+      logJSONData(emailErrorText, 1)
       result = false
     }  else {
       form.setAttribute('data-error', '')
@@ -51,18 +67,12 @@ const validation = (elem) => {
       console.log(elem.value.length)
       console.log('password')
       form.setAttribute('data-error', 'error')
+      logJSONData(passwordErrorText, 2)
       result = false
     }  else {
       form.setAttribute('data-error', '')
     }
   }
-  // if ( elem.value == '' || elem.getAttribute('name') === 'email' && !regexForEmail.test(elem.value)) {
-  //   console.log('email')
-  //   form.setAttribute('data-error', 'error')
-  //   result = false
-  // }  else {
-  //   form.setAttribute('data-error', '')
-  // }
 
 }
 nextButton.addEventListener('click', () => {
@@ -76,6 +86,7 @@ nextButton.addEventListener('click', () => {
   if (slider.getAttribute('data-step') === 'slide3') {
     console.log('test' + count)
     validation(inputText)
+
   }
   if (slider.getAttribute('data-step') === 'slide4') {
     console.log('test' + count)
@@ -92,21 +103,3 @@ nextButton.addEventListener('click', () => {
   }
 
 })
-
-// Appending to the DOM
-// const logo = document.createElement('img')
-// logo.src = webpackLogo
-//
-// const heading = document.createElement('h1')
-// heading.textContent = example()
-//
-// // Test a background image url in CSS
-// const imageBackground = document.createElement('div')
-// imageBackground.classList.add('image')
-//
-// // Test a public folder asset
-// const imagePublic = document.createElement('img')
-// imagePublic.src = '/assets/example.png'
-//
-// const app = document.querySelector('#root')
-// app.append(logo, heading, imageBackground, imagePublic)
