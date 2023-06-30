@@ -1,0 +1,66 @@
+// я обычно создаю миксин и уже потом прописываю
+// в стилях самого компонента
+.lnd {
+  @media screen and (max-width: 800px) {
+    .lnd-header {
+      position: relative;
+    }
+    .lnd-login {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: 11px 16px 0;
+      &-form {
+        width: auto;
+      }
+      &-input {
+        width: auto;
+        & + .lnd-login-input {
+          margin-left: 12px;
+        }
+      }
+      &-button {
+        margin-left: 12px;
+      }
+    }
+    .lnd-content-registration {
+      width: 100%;
+    }
+    .reg-slider {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &-list {
+        order: 1;
+        width: 100%;
+      }
+      &-prev {
+        position: relative;
+        top: 0;
+        left: 0;
+        order: 2;
+      }
+      &-next {
+        position: relative;
+        top: 0;
+        right: 0;
+        order: 3;
+      }
+      &-dots {
+        width: 100%;
+        order: 4;
+        margin-top: 16px;
+        justify-content: center;
+        li + li {
+          margin-left: 10px;
+        }
+      }
+    }
+    .form-error {
+      padding: 0 8px;
+      text-align: center;
+    }
+  }
+}
